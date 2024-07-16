@@ -1,0 +1,192 @@
+# .NET
+**/[Bb]in/
+**/[Oo]bj/
+**/Debug/
+**/Release/
+**/[Pp]ublish/
+
+# Visual Studio
+.vscode/
+.vs/
+.vscode/*
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.csproj.user
+*.vcxproj.user
+*.rsuser
+*.suo
+*.cache
+*.docstates
+*.DotSettings.user
+*.dotsettings
+
+# Mono auto generated files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Rider project files
+.idea/
+*.idea/
+*.sln.iml
+*.iml
+
+# Rider logs
+.idea/.idea.log
+.idea/.idea.max
+
+# Rider workspace
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/inspectionProfiles
+
+# Rider project specific directories
+.idea/deployment.xml
+.idea/artifacts
+.idea/gradle.xml
+.idea/libraries
+
+# Rider SDK
+.idea/modules.xml
+.idea/modules
+.idea/sonarIssue.xml
+
+# Rider Cache
+.idea/riderCaches/
+.idea/configurations/
+.idea/shelves/
+.idea/.idea_shelve
+.idea/misc.xml
+
+# JetBrains annotations
+annotations.xml
+
+# JetBrains dictionaries
+dictionaries/
+
+# Rider Solution-wide analysis
+.idea/.idea.*
+
+# Rider navigation history
+.idea/navigate_to_file_history.xml
+
+# Rider project models
+.idea/.idea.workspace.xml
+
+# Rider Solution specific files
+.idea/.idea.*
+
+# Rider VCS xml
+.idea/vcs.xml
+
+# Rider tasks
+.idea/tasks.xml
+
+# Rider codeStyleSettings.xml
+.idea/codeStyleSettings.xml
+
+# Rider External Libraries
+.idea/libraries/
+
+# Rider modules.xml
+.idea/modules.xml
+
+# Rider workspace.xml
+.idea/workspace.xml
+
+# Rider workspace.xml
+.idea/runConfigurations/
+.idea/sonarIssues.xml
+.idea/asset.indexes
+.idea/cache
+.idea/debugger
+.idea/code
+.idea/colorSettings.xml
+.idea/configuration
+.idea/configuration/
+.idea/configuration/.idea
+.idea/configuration/.idea.log
+.idea/deployment.xml
+.idea/gradle.xml
+.idea/inspectionProfiles
+.idea/libraries
+.idea/macros
+.idea/modules
+.idea/navigation
+.idea/runConfigurations
+.idea/shelf
+.idea/sonarIssues.xml
+.idea/tasks
+.idea/workspace.xml
+.idea/codestyles
+.idea/codestyles/
+.idea/dictionaries
+.idea/caches
+.idea/deployment
+.idea/deployment.xml
+.idea/workspace
+
+# Rider external libraries
+.idea/libraries/
+.idea/modules.xml
+
+# Rider caches
+.idea/caches
+.idea/workspace
+.idea/navigation
+
+# Rider module.xml
+.idea/module.xml
+
+# Rider workspace.xml
+.idea/workspace.xml
+
+# Rider workspace
+.idea/workspace
+
+# Rider tasks
+.idea/tasks.xml
+
+# Rider logs
+.idea/.idea.*
+
+# Rider vcs
+.idea/vcs.xml
+
+# Rider misc.xml
+.idea/misc.xml
+
+# Rider sonar
+.idea/sonarIssues.xml
