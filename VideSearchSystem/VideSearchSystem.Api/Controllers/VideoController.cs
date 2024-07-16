@@ -16,14 +16,12 @@ namespace VideSearchSystem.Api.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> Upload()
+        public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            var videoFile = HttpContext.Request.Form.Files.FirstOrDefault();
+            if (file == null || file.Length == 0)
+                return BadRequest("No file uploaded");
 
-            if (videoFile == null || videoFile.Length == 0)
-                return BadRequest("Invalid video file.");
-
-            var command = new UploadOriginalVideoCommand(videoFile.FileName, videoFile);
+            var command = new UploadOriginalVideoCommand(file);
             var result = await _mediator.Send(command);
 
             return Ok(new { FileName = result });

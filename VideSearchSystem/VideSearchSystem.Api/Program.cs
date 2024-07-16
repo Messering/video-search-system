@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using VideSearchSystem.Api.Swagger;
+using VideSearchSystem.Application;
 using VideSearchSystem.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<FileUploadFilter>();
 });
 
+builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();

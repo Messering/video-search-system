@@ -1,47 +1,30 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
-namespace VideSearchSystem.Application.OriginalVideo.Commands
+namespace VideSearchSystem.Application.OriginalVideo.Commands;
+
+public record UploadOriginalVideoCommand(IFormFile VideoFile) : IRequest<string>;
+
+public class UploadOriginalVideoCommandHandler(IWebHostEnvironment webHostEnvironment) : IRequestHandler<UploadOriginalVideoCommand, string>
 {
-    public record UploadOriginalVideoCommand : IRequest<string>
+    private readonly IWebHostEnvironment _webHostEnvironment = webHostEnvironment;
+
+    public async Task<string> Handle(UploadOriginalVideoCommand request, CancellationToken cancellationToken)
     {
-        public string Title { get; set; }
-        public IFormFile VideoFile { get; set; }
+        if (request.VideoFile is null or { Length: 0 })
+            throw new ArgumentException("Invalid video file.", nameof(request.VideoFile));
 
-        public UploadOriginalVideoCommand(string title, IFormFile videoFile)
-        {
-            Title = title;
-            VideoFile = videoFile;
-        }
-    }
+        var uploadsFolderPath = Path.Combine(_webHostEnvironment.ContentRootPath, "uploads");
 
+        // Ensure the uploads directory exists
+        Directory.CreateDirectory(uploadsFolderPath);
 
-    public class UploadOriginalVideoCommandHandler : IRequestHandler<UploadOriginalVideoCommand, string>
-    {
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(request.VideoFile.FileName)}";
+        var filePath = Path.Combine(uploadsFolderPath, fileName);
 
-        public UploadOriginalVideoCommandHandler(IWebHostEnvironment webHostEnvironment)
-        {
-            _webHostEnvironment = webHostEnvironment;
-        }
+        await using var fileStream = new FileStream(filePath, FileMode.Create);
+        await request.VideoFile.CopyToAsync(fileStream, cancellationToken);
 
-        public async Task<string> Handle(UploadOriginalVideoCommand request, CancellationToken cancellationToken)
-        {
-            if (request.VideoFile == null || request.VideoFile.Length == 0)
-                throw new ArgumentException("Invalid video file.");
-
-            var uploadsFolderPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
-            Directory.CreateDirectory(uploadsFolderPath);
-
-            var fileName = Guid.NewGuid() + Path.GetExtension(request.VideoFile.FileName);
-            var filePath = Path.Combine(uploadsFolderPath, fileName);
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await request.VideoFile.CopyToAsync(fileStream);
-            }
-
-            return fileName;
-        }
+        return fileName;
     }
 }
