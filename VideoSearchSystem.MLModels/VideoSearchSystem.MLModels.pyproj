@@ -1,0 +1,102 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>58985eec-0140-4c4f-a9ec-958d41772be9</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>VideoSearchSystem.MLModels</Name>
+    <RootNamespace>VideoSearchSystem.MLModels</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.11</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="data_processing\" />
+    <Folder Include="feature_extraction\" />
+    <Folder Include="neural_models\" />
+    <Folder Include="neural_models\base\" />
+    <Folder Include="neural_models\dcnn_scene_detector\" />
+    <Folder Include="neural_models\attention\" />
+    <Folder Include="neural_models\object_detection\" />
+    <Folder Include="neural_models\slowfast_feature_extractor\" />
+    <Folder Include="integration\" />
+    <Folder Include="tests\" />
+    <Folder Include="utils\" />
+    <Folder Include="optimization\" />
+    <Folder Include="storage\" />
+    <Folder Include="similarity_matching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\config.py" />
+    <Compile Include="config\__init__.py" />
+    <Compile Include="data_processing\rgb_to_hsv_converter.py" />
+    <Compile Include="data_processing\video_loader.py" />
+    <Compile Include="feature_extraction\histogram_features.py" />
+    <Compile Include="feature_extraction\object_features.py" />
+    <Compile Include="feature_extraction\optical_flow.py" />
+    <Compile Include="feature_extraction\pixel_difference.py" />
+    <Compile Include="feature_extraction\spatial_features.py" />
+    <Compile Include="feature_extraction\temporal_features.py" />
+    <Compile Include="feature_extraction\__init__.py" />
+    <Compile Include="integration\feature_integrator.py" />
+    <Compile Include="main.py" />
+    <Compile Include="neural_models\attention\attention_layer.py" />
+    <Compile Include="neural_models\attention\__init__.py" />
+    <Compile Include="neural_models\base\convolutional_layers.py" />
+    <Compile Include="neural_models\base\fully_connected_layers.py" />
+    <Compile Include="neural_models\base\pooling_layers.py" />
+    <Compile Include="neural_models\base\__init__.py" />
+    <Compile Include="neural_models\dcnn_scene_detector\histogram_diff_layer.py" />
+    <Compile Include="neural_models\dcnn_scene_detector\pixel_diff_layer.py" />
+    <Compile Include="neural_models\dcnn_scene_detector\scene_detector.py" />
+    <Compile Include="neural_models\dcnn_scene_detector\__init__.py" />
+    <Compile Include="neural_models\object_detection\efficientnet_detector.py" />
+    <Compile Include="neural_models\object_detection\mobilenet_detector.py" />
+    <Compile Include="neural_models\object_detection\__init__.py" />
+    <Compile Include="neural_models\slowfast_feature_extractor\slowfast_model.py" />
+    <Compile Include="neural_models\slowfast_feature_extractor\__init__.py" />
+    <Compile Include="neural_models\__init__.py" />
+    <Compile Include="optimization\fnn_optimizer.py" />
+    <Compile Include="optimization\parameter_tuning.py" />
+    <Compile Include="similarity_matching\cosine_similarity.py" />
+    <Compile Include="similarity_matching\dtw_similarity.py" />
+    <Compile Include="similarity_matching\vector_constructor.py" />
+    <Compile Include="storage\mongo_connector.py" />
+    <Compile Include="storage\storage_schema.py" />
+    <Compile Include="tests\test_scene_detector.py" />
+    <Compile Include="tests\test_similarity_matching.py" />
+    <Compile Include="utils\helpers.py" />
+    <Compile Include="utils\visualizations.py" />
+    <Compile Include="utils\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mypy.ini" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.11" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

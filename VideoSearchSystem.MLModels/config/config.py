@@ -1,0 +1,13 @@
+VIDEO_DIR = "data/videos/"
+OUTPUT_DIR = "data/output/"
+FRAME_RATE = 1
+COLOR_CONVERSION = "HSV"
+
+CHI_SQUARE_THRESHOLD = 3000
+PIXEL_DIFF_THRESHOLD = 30
+
+FRAME_WIDTH = 224
+FRAME_HEIGHT = 224
+
+MONGO_URI = "mongodb://localhost:27017"
+DB_NAME = "VideoSearch"

@@ -1,0 +1,13 @@
+tensorflow==2.15.0
+opencv-python==4.9.0.80
+numpy==1.26.4
+scipy==1.13.0
+scikit-learn==1.4.2
+matplotlib==3.8.4
+pymongo==4.6.3
+tensorflow-hub==0.16.1
+tensorflow-addons==0.22.0
+efficientnet==1.1.1
+tqdm==4.66.2
+fastapi==0.110.1
+uvicorn==0.29.0
